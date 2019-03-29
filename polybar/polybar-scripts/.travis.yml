@@ -1,0 +1,9 @@
+language: generic
+
+dist: xenial
+
+before_script:
+    - shellcheck --version
+
+script:
+    - source ${TRAVIS_BUILD_DIR}/build.sh
