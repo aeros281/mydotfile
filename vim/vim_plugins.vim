@@ -11,9 +11,11 @@ Plug 'bling/vim-airline'
 
 """ Language vim script
 Plug 'neovimhaskell/haskell-vim'
+Plug 'editorconfig/editorconfig-vim'
 
 """ Completor
-Plug 'lifepillar/vim-mucomplete'
+"Plug 'lifepillar/vim-mucomplete'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 """ Code display
 Plug 'nathanaelkane/vim-indent-guides'
@@ -35,3 +37,4 @@ source ~/.vim/plugconfig/vim-airline.vim
 source ~/.vim/plugconfig/vim-mucomplete.vim
 source ~/.vim/plugconfig/ctrlp.vim
 source ~/.vim/plugconfig/indent-guides.vim
+source ~/.vim/plugconfig/coc-vim.vim
