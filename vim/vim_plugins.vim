@@ -3,7 +3,9 @@ call plug#begin('~/.vim/plugged')
 """ Common
 Plug 'tpope/vim-surround'
 Plug 'easymotion/vim-easymotion'
-Plug 'kien/ctrlp.vim'
+" Plug 'kien/ctrlp.vim'
+Plug 'junegunn/fzf', { 'do': './install --bin' }
+Plug 'junegunn/fzf.vim'
 Plug 'w0rp/ale'
 
 """ Interface
@@ -38,3 +40,4 @@ source ~/.vim/plugconfig/vim-mucomplete.vim
 source ~/.vim/plugconfig/ctrlp.vim
 source ~/.vim/plugconfig/indent-guides.vim
 source ~/.vim/plugconfig/coc-vim.vim
+source ~/.vim/plugconfig/fzf.vim
