@@ -1,6 +1,6 @@
 call plug#begin('~/.vim/plugged')
 
-source /home/anhltt/.config/nvim/plugin_list.vim
+source /home/kaita1992/.config/nvim/plugin_list.vim
 
 " Initialize plugin system
 call plug#end()
@@ -81,5 +81,5 @@ nmap <Leader>A vaw"ay:Ag <C-R>a
 set termguicolors
 
 colorscheme codedark
-let g:airline_theme = 'codedark'
+" let g:airline_theme = 'codedark'
 
