@@ -1,6 +1,6 @@
 call plug#begin('~/.vim/plugged')
 
-source /home/kaita1992/.config/nvim/plugin_list.vim
+source /Users/anhtran/.config/nvim/plugin_list.vim
 
 " Initialize plugin system
 call plug#end()
