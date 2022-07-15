@@ -1,6 +1,7 @@
 call plug#begin('~/.vim/plugged')
 
-source /home/kaita1992/.config/nvim/plugin_list.vim
+let absolute_path = fnamemodify(resolve(expand('<sfile>:p')), ':h')
+exec 'source' absolute_path . '/plugin_list.vim'
 
 " Initialize plugin system
 call plug#end()
