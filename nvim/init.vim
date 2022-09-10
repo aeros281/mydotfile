@@ -54,7 +54,7 @@ set number
 set nocompatible
 set mouse=a
 set cursorline
-
+set ttimeoutlen=50
 
 " Enable save as root hack
 cmap w!! w !sudo tee > /dev/null %
@@ -83,4 +83,13 @@ set termguicolors
 
 colorscheme codedark
 " let g:airline_theme = 'codedark'
+
+" Always add end of line when saving file
+function! AddLastLine()
+    if getline('$') !~ "^$"
+        call append(line('$'), '')
+    endif
+endfunction
+
+autocmd BufWritePre * call AddLastLine()
 
