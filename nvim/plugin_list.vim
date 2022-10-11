@@ -9,12 +9,13 @@ Plug 'preservim/nerdtree'
 Plug 'tpope/vim-surround'
 Plug 'sheerun/vim-polyglot'
 Plug 'tpope/vim-fugitive'
-Plug 'airblade/vim-gitgutter'
+" Plug 'airblade/vim-gitgutter'
 Plug 'francoiscabrol/ranger.vim'
 Plug 'rbgrouleff/bclose.vim'
 Plug 'jiangmiao/auto-pairs'
 Plug 'scrooloose/nerdcommenter'
 Plug 'gpanders/editorconfig.nvim'
+Plug 'timakro/vim-yadi'
 
 """ Interface plugin
 Plug 'bling/vim-airline'
@@ -34,6 +35,7 @@ Plug 'tomasiser/vim-code-dark'
 Plug 'neovimhaskell/haskell-vim'
 Plug 'pangloss/vim-javascript'
 Plug 'mxw/vim-jsx'
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 
 """ Completor
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
@@ -50,7 +52,22 @@ nnoremap <C-n> :NERDTree<CR>
 nnoremap <C-t> :NERDTreeToggle<CR>
 nnoremap <C-f> :NERDTreeFind<CR>
 
-" Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
+""" Auto indent plugin
+" Try to auto detect and use the indentation of a file when opened.
+autocmd BufRead * DetectIndent
+
+" Otherwise use file type specific indentation. E.g. tabs for Makefiles
+" and 4 spaces for Python. This is optional.
+filetype plugin indent on
+
+" Set a fallback here in case detection fails and there is no file type
+" plugin available. You can also omit this, then Vim defaults to tabs.
+set expandtab shiftwidth=4 softtabstop=4
+
+" You stay in control of your tabstop setting.
+set tabstop=4
+
+""" Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
 let g:UltiSnipsExpandTrigger="<C:;>"
 
 if ! has('gui_running')
