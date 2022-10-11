@@ -7,8 +7,10 @@ exec 'source' absolute_path . '/plugin_list.vim'
 call plug#end()
 
 """ Quickly edit/reload configuration file
-nnoremap gev :e /home/anhltt/.config/nvim/init.vim<CR>
-nnoremap gsv :so /home/anhltt/.config/nvim/init.vim<CR>
+nnoremap gev :e ~/Projects/GitHub/mydotfile/nvim/init.vim<CR>
+nnoremap gsv :so ~/Projects/GitLab/mydotfile/nvim/init.vim<CR>
+nnoremap gep :e ~/Projects/GitHub/mydotfile/nvim/plugin_list.vim<CR>
+nnoremap gsp :so ~/Projects/GitLab/mydotfile/nvim/plugin_list.vim<CR>
 
 set nocompatible              " be iMproved, required
 filetype off                  " required
