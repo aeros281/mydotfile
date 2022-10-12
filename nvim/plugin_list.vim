@@ -7,7 +7,7 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'preservim/nerdtree'
 Plug 'tpope/vim-surround'
-Plug 'sheerun/vim-polyglot'
+" Plug 'sheerun/vim-polyglot'
 Plug 'tpope/vim-fugitive'
 " Plug 'airblade/vim-gitgutter'
 Plug 'francoiscabrol/ranger.vim'
@@ -83,7 +83,7 @@ endif
 nmap <Leader>s <Plug>(easymotion-overwin-f2)
 nmap <Leader><Leader>s <Plug>(easymotion-overwin-f2)
 
-nmap <space>gb :Gblame<cr>
+nmap <space>gb :Git blame<cr>
 nmap <space>gs :Gstatus<cr>
 nmap <space>gc :Gcommit -v<cr>
 nmap <space>ga :Git add -p<cr>

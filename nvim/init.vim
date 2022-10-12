@@ -1,3 +1,5 @@
+language en_US
+
 call plug#begin('~/.vim/plugged')
 
 let absolute_path = fnamemodify(resolve(expand('<sfile>:p')), ':h')
@@ -79,6 +81,7 @@ nnoremap <leader>v :Files<cr>
 nmap ; :Buffers<CR>
 
 nmap <Leader>a :Ag
+nmap <A-F> :Ag<cr>
 nmap <Leader>A vaw"ay:Ag <C-R>a
 
 set termguicolors
