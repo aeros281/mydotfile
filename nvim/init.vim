@@ -74,8 +74,8 @@ function! FzyCommand(choice_command, vim_command)
 endfunction
 
 "nmap <C-P> :call FzyCommand("find . -type f", ":e")<cr>
-nmap <C-P> :Files<cr>
-nnoremap <leader>v :call FzyCommand("find . -type f", ":vs")<cr>
+nmap <C-P> :GFiles<cr>
+nnoremap <leader>v :Files<cr>
 nmap ; :Buffers<CR>
 
 nmap <Leader>a :Ag
