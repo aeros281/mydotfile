@@ -81,6 +81,7 @@ endif
 
 " s{char}{char} to move to {char}{char}
 nmap <Leader>s <Plug>(easymotion-overwin-f2)
+nmap <Leader><Leader>s <Plug>(easymotion-overwin-f2)
 
 nmap <space>gb :Gblame<cr>
 nmap <space>gs :Gstatus<cr>
