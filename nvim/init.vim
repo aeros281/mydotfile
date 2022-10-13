@@ -1,5 +1,3 @@
-language en_US
-
 call plug#begin('~/.vim/plugged')
 
 let absolute_path = fnamemodify(resolve(expand('<sfile>:p')), ':h')
@@ -13,6 +11,9 @@ nnoremap gev :e ~/Projects/GitHub/mydotfile/nvim/init.vim<CR>
 nnoremap gsv :so ~/Projects/GitLab/mydotfile/nvim/init.vim<CR>
 nnoremap gep :e ~/Projects/GitHub/mydotfile/nvim/plugin_list.vim<CR>
 nnoremap gsp :so ~/Projects/GitLab/mydotfile/nvim/plugin_list.vim<CR>
+
+""" Unload buffer on c-w on normal mode
+nnoremap <A-w> :bd<cr>
 
 set nocompatible              " be iMproved, required
 filetype off                  " required
