@@ -8,9 +8,9 @@ call plug#end()
 
 """ Quickly edit/reload configuration file
 nnoremap gev :e ~/Projects/GitHub/mydotfile/nvim/init.vim<CR>
-nnoremap gsv :so ~/Projects/GitLab/mydotfile/nvim/init.vim<CR>
+nnoremap gsv :so ~/Projects/GitHub/mydotfile/nvim/init.vim<CR>
 nnoremap gep :e ~/Projects/GitHub/mydotfile/nvim/plugin_list.vim<CR>
-nnoremap gsp :so ~/Projects/GitLab/mydotfile/nvim/plugin_list.vim<CR>
+nnoremap gsp :so ~/Projects/GitHub/mydotfile/nvim/plugin_list.vim<CR>
 
 """ Unload buffer on c-w on normal mode
 nnoremap <A-w> :bd<cr>
@@ -77,18 +77,22 @@ function! FzyCommand(choice_command, vim_command)
 endfunction
 
 "nmap <C-P> :call FzyCommand("find . -type f", ":e")<cr>
-nmap <C-P> :GFiles<cr>
+"nmap <c-p> :GFiles<cr>
+nmap <c-p> <cmd>Telescope find_files<cr>
 nnoremap <leader>v :Files<cr>
 nmap ; :Buffers<CR>
 
-nmap <Leader>a :Ag
+nmap <Leader>af <cmd>Telescope live_grep<cr>
+nmap <Leader>ra <cmd>Ranger<cr>
 nmap <A-F> :Ag<cr>
-nmap <Leader>A vaw"ay:Ag <C-R>a
+imap <c-v> <cmd>Telescope registers<cr>
+nmap <c-v> <cmd>Telescope registers<cr>
+nmap <Leader>A <cmd>Telescope grep_string<cr>
 
 set termguicolors
 
 colorscheme codedark
-" let g:airline_theme = 'codedark'
+let g:airline_theme = 'codedark'
 
 " Always add end of line when saving file
 function! AddLastLine()

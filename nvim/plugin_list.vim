@@ -16,6 +16,9 @@ Plug 'rbgrouleff/bclose.vim'
 Plug 'scrooloose/nerdcommenter'
 Plug 'gpanders/editorconfig.nvim'
 Plug 'timakro/vim-yadi'
+Plug 'nvim-lua/plenary.nvim'
+Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.0' }
+
 
 """ Interface plugin
 Plug 'bling/vim-airline'
