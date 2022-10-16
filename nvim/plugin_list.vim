@@ -19,6 +19,7 @@ Plug 'timakro/vim-yadi'
 Plug 'wellle/targets.vim'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.0' }
+Plug 'ggandor/lightspeed.nvim'
 
 
 """ Interface plugin
