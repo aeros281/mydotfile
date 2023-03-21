@@ -20,6 +20,8 @@ Plug 'wellle/targets.vim'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.0' }
 Plug 'ggandor/lightspeed.nvim'
+Plug 'pixelneo/vim-python-docstring'
+Plug 'fannheyward/telescope-coc.nvim'
 
 
 """ Interface plugin
@@ -41,6 +43,7 @@ Plug 'neovimhaskell/haskell-vim'
 Plug 'pangloss/vim-javascript'
 Plug 'mxw/vim-jsx'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+Plug 'elixir-editors/vim-elixir'
 
 """ Completor
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
