@@ -78,13 +78,15 @@ endfunction
 
 "nmap <C-P> :call FzyCommand("find . -type f", ":e")<cr>
 "nmap <c-p> :GFiles<cr>
-nmap <c-p> <cmd>Telescope find_files<cr>
+nmap <c-p> <cmd>Telescope find_files hidden=true<cr>
 nnoremap <leader>v :Files<cr>
 nmap ; :Buffers<CR>
 
 nmap <Leader>af <cmd>Telescope live_grep<cr>
 nmap <Leader>ra <cmd>Ranger<cr>
-nmap <A-F> :Ag<cr>
+"nmap <A-F> :Ag<cr>
+nmap <A-F> <cmd>Telescope live_grep<cr>
+nnoremap <A-w> :bd<cr>
 imap <c-v> <cmd>Telescope registers<cr>
 nmap <c-v> <cmd>Telescope registers<cr>
 nmap <Leader>A <cmd>Telescope grep_string<cr>
@@ -94,12 +96,12 @@ set termguicolors
 colorscheme codedark
 let g:airline_theme = 'codedark'
 
-" Always add end of line when saving file
-function! AddLastLine()
-    if getline('$') !~ "^$"
-        call append(line('$'), '')
-    endif
-endfunction
+hi CocInlayHint guibg=White guifg=Black ctermbg=White ctermfg=Black
 
-autocmd BufWritePre * call AddLastLine()
+au BufRead,BufNewFile *.eex,*.heex,*.leex,*.sface,*.lexs set filetype=eelixir
+au BufRead,BufNewFile mix.lock set filetype=elixir
+
+set foldmethod=expr
+set foldexpr=nvim_treesitter#foldexpr()
+autocmd BufReadPost,FileReadPost * normal zR
 
