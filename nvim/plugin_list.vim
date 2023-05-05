@@ -22,7 +22,8 @@ Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.0' }
 Plug 'ggandor/lightspeed.nvim'
 Plug 'pixelneo/vim-python-docstring'
 Plug 'fannheyward/telescope-coc.nvim'
-
+Plug 'lukas-reineke/indent-blankline.nvim'
+Plug 'neworld/vim-git-hunk-editor'
 
 """ Interface plugin
 Plug 'bling/vim-airline'
