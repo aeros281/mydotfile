@@ -62,7 +62,10 @@ set cursorline
 set ttimeoutlen=50
 
 " Enable save as root hack
-cmap w!! w !sudo tee > /dev/null %
+" cmap w!! w !sudo tee > /dev/null %
+
+" Turn on case-insensitive feature
+let g:EasyMotion_smartcase = 1
 
 function! FzyCommand(choice_command, vim_command)
   try
@@ -104,4 +107,3 @@ au BufRead,BufNewFile mix.lock set filetype=elixir
 set foldmethod=expr
 set foldexpr=nvim_treesitter#foldexpr()
 autocmd BufReadPost,FileReadPost * normal zR
-
