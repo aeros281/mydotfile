@@ -24,7 +24,7 @@ legendary.setup({
         { ';', builtin.buffers, description = 'Search buffers' },
         { '<leader>A', builtin.grep_string, description = 'Grep the current string on cursor' },
         { '<leader>ra', function() ranger.open(true) end, description = 'Open ranger (File browser)' },
-        { '<C-`>', function() require('Fterm').toggle() end, description = 'Open quake terminal' },
+        { '<F2>', function() require('Fterm').toggle() end, description = 'Open quake terminal' },
 
         -- Git
         { '<leader>st', builtin.git_status, description = 'Git status' },
