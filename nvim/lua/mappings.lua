@@ -24,6 +24,7 @@ legendary.setup({
         { ';', builtin.buffers, description = 'Search buffers' },
         { '<leader>A', builtin.grep_string, description = 'Grep the current string on cursor' },
         { '<leader>ra', function() ranger.open(true) end, description = 'Open ranger (File browser)' },
+        { '<A-i>', function() require('Fterm').toggle() end, description = 'Open quake terminal' },
 
         -- Git
         { '<leader>st', builtin.git_status, description = 'Git status' },
@@ -37,6 +38,11 @@ legendary.setup({
         { '<space>o', builtin.lsp_document_symbols, description = 'Find all symbols in the current document' },
         { '<space>s', builtin.lsp_dynamic_workspace_symbols, description = 'Find all symbols on the current workspace (Dynamic)' },
         { '<space>e', builtin.diagnostics, description = 'Show all diagnostics' },
+
+        -- Marks
+        { 'mo', builtin.marks, description = 'Show all marks (Telescope)' },
+        { 'm;', '<Plug>(Marks-toggle)', description = 'Toggle mark on the current line' },
+        { 'dm<space>', '<Plug>(Marks-deletebuf)', description = 'Clear all marks on the current buffer' },
     },
     commands = {
         {

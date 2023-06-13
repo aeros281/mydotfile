@@ -15,7 +15,6 @@ return require('packer').startup(function(use)
     }
 
     -- UI utilities
-
     use {'stevearc/dressing.nvim'}
 
     use {
@@ -50,6 +49,15 @@ return require('packer').startup(function(use)
             require('scrollbar.handlers.gitsigns').setup()
         end
     }
+
+    use {
+        'chentoast/marks.nvim',
+        config = function()
+            require('anhtran.marks')
+        end
+    }
+
+    use "numToStr/FTerm.nvim"
 
     use {
         'gelguy/wilder.nvim',
@@ -159,7 +167,14 @@ return require('packer').startup(function(use)
         end
     }
 
-    -- LSP
+    use {
+        "tenxsoydev/tabs-vs-spaces.nvim",
+        config = function()
+            require("tabs-vs-spaces").setup()
+        end
+    }
+
+    -- Code completion
     use {
         'neovim/nvim-lspconfig',
         config = function()
