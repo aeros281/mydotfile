@@ -207,11 +207,11 @@ return require('packer').startup(function(use)
     }
 
     -- Colorschemes
-    use({
-        'glepnir/zephyr-nvim',
+    use {
+        'dasupradyumna/midnight.nvim',
         requires = { 'nvim-treesitter/nvim-treesitter', opt = true },
         config = function()
-            vim.cmd('colorscheme zephyr')
+            vim.cmd('colorscheme midnight')
         end
-    })
+    }
 end)
