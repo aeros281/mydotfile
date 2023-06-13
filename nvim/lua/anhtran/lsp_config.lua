@@ -48,7 +48,7 @@ vim.api.nvim_create_autocmd('LspAttach', {
 })
 
 require'nvim-treesitter.configs'.setup {
-  ensure_installed = {"elixir", "heex", "eex", "html", "lua", "sql", "html", "python"}, -- only install parsers for elixir and heex
+  ensure_installed = {"elixir", "heex", "eex", "html", "lua", "sql", "html", "python", "markdown", "yaml"}, -- only install parsers for elixir and heex
   -- ensure_installed = "all", -- install parsers for all supported languages
   sync_install = false,
   ignore_install = { },

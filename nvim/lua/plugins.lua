@@ -197,6 +197,15 @@ return require('packer').startup(function(use)
     
     use 'Glench/Vim-Jinja2-Syntax'
 
+    use {
+        "cuducos/yaml.nvim",
+        ft = { "yaml" }, -- optional
+        requires = {
+            "nvim-treesitter/nvim-treesitter",
+            "nvim-telescope/telescope.nvim" -- optional
+        },
+    }
+
     -- Colorschemes
     use({
         'glepnir/zephyr-nvim',

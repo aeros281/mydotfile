@@ -51,6 +51,20 @@ legendary.setup({
                 vim.cmd("PackerSync")
             end,
             description = "Sync packer",
-        }
+        },
+        {
+            ':LedgYamlJump',
+            function()
+                vim.cmd("YAMLTelescope")
+            end,
+            description = "View YAML (Telescope)",
+        },
+        {
+            ':LedgYamlView',
+            function()
+                vim.cmd("YAMLView")
+            end,
+            description = "View YAML",
+        },
     }
 })
