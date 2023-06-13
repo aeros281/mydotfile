@@ -30,6 +30,9 @@ legendary.setup({
         { '<leader>st', builtin.git_status, description = 'Git status' },
         { '<leader>gs', ':AdvancedGitSearch<CR>', description = 'Advanced git search' },
         { '<leader>gb', ':GitBlameToggle<CR>', description = 'Toggle git blame' },
+        { '<leader>gh', ':VGit buffer_hunk_preview<CR>', description = 'VGit: Buffer hunk preview related to current cursor' },
+        { '<leader>gd', ':VGit buffer_diff_preview<CR>', description = 'VGit: Buffer diff preview' },
+        { '<leader>gp', ':VGit project_diff_preview<CR>', description = 'VGit: Project diff preview' },
 
         -- LSP keymap
         { 'gr', builtin.lsp_references, description = 'Find all references' },
