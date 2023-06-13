@@ -213,6 +213,7 @@ return require('packer').startup(function(use)
         },
     }
 
+    -- Git
     use {
         'tanvirtin/vgit.nvim',
         requires = {
@@ -222,6 +223,8 @@ return require('packer').startup(function(use)
             require('vgit').setup()
         end
     }
+
+    use "sindrets/diffview.nvim"
 
     -- Colorschemes
     use {

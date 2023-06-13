@@ -70,5 +70,19 @@ legendary.setup({
             end,
             description = "View YAML",
         },
+        {
+            ':LedgDiffView',
+            function()
+                vim.cmd("DiffviewOpen")
+            end,
+            description = "Open diff view",
+        },
+        {
+            ':LedgDiffViewOff',
+            function()
+                vim.cmd("DiffviewClose")
+            end,
+            description = "Close diff view",
+        },
     }
 })
