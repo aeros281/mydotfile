@@ -4,12 +4,11 @@
 vim.cmd [[packadd packer.nvim]]
 
 return require('packer').startup(function(use)
-    -- Packer can manage itself
     use 'wbthomason/packer.nvim'
 
     -- File utilities
     use {
-        "ms-jpq/chadtree",
+        'ms-jpq/chadtree',
         branch = 'chad',
         run = 'python3 -m chadtree deps'
     }
@@ -24,29 +23,21 @@ return require('packer').startup(function(use)
     }
 
     use({
-        "utilyre/barbecue.nvim",
-        tag = "*",
+        'utilyre/barbecue.nvim',
+        tag = '*',
         requires = {
-            "SmiteshP/nvim-navic",
-            "nvim-tree/nvim-web-devicons",
+            'SmiteshP/nvim-navic',
+            'nvim-tree/nvim-web-devicons',
         },
         config = function()
-            require("barbecue").setup()
+            require('barbecue').setup()
         end,
     })
 
     use {
-        "petertriho/nvim-scrollbar",
+        'petertriho/nvim-scrollbar',
         config = function()
-            require("scrollbar").setup()
-        end
-    }
-
-    use {
-        'lewis6991/gitsigns.nvim',
-        config = function()
-            require('gitsigns').setup()
-            require('scrollbar.handlers.gitsigns').setup()
+            require('scrollbar').setup()
         end
     }
 
@@ -57,7 +48,7 @@ return require('packer').startup(function(use)
         end
     }
 
-    use "numToStr/FTerm.nvim"
+    use 'numToStr/FTerm.nvim'
 
     use 'nvim-tree/nvim-web-devicons'
 
@@ -117,22 +108,6 @@ return require('packer').startup(function(use)
     }
 
     use {
-        'aaronhallaert/advanced-git-search.nvim',
-        config = function()
-            require('anhtran.advanced_git_search')
-        end,
-        requires = {
-            'nvim-telescope/telescope.nvim',
-            -- to show diff splits and open commits in browser
-            'tpope/vim-fugitive',
-            -- to open commits in browser with fugitive
-            'tpope/vim-rhubarb',
-            -- optional: to replace the diff from fugitive with diffview.nvim
-            'sindrets/diffview.nvim',
-        },
-    }
-
-    use {
         'mrjones2014/legendary.nvim',
         tag = 'v2.1.0',
         -- sqlite is only needed if you want to use frecency sorting
@@ -141,8 +116,6 @@ return require('packer').startup(function(use)
             require('anhtran.legendary')
         end
     }
-
-    use 'f-person/git-blame.nvim'
 
     -- Editing
     use {
@@ -154,7 +127,7 @@ return require('packer').startup(function(use)
 
     use({
         'kylechui/nvim-surround',
-        tag = "*", -- Use for stability; omit to use `main` branch for the latest features
+        tag = '*', -- Use for stability; omit to use `main` branch for the latest features
         config = function()
             require('nvim-surround').setup({
                 -- Configuration here, or leave empty to use defaults
@@ -170,9 +143,9 @@ return require('packer').startup(function(use)
     }
 
     use {
-        "tenxsoydev/tabs-vs-spaces.nvim",
+        'tenxsoydev/tabs-vs-spaces.nvim',
         config = function()
-            require("tabs-vs-spaces").setup()
+            require('tabs-vs-spaces').setup()
         end
     }
 
@@ -205,15 +178,33 @@ return require('packer').startup(function(use)
     use 'Glench/Vim-Jinja2-Syntax'
 
     use {
-        "cuducos/yaml.nvim",
-        ft = { "yaml" }, -- optional
+        'cuducos/yaml.nvim',
+        ft = { 'yaml' }, -- optional
         requires = {
-            "nvim-treesitter/nvim-treesitter",
-            "nvim-telescope/telescope.nvim" -- optional
+            'nvim-treesitter/nvim-treesitter',
+            'nvim-telescope/telescope.nvim' -- optional
         },
     }
 
     -- Git
+    use 'f-person/git-blame.nvim'
+
+    use {
+        'aaronhallaert/advanced-git-search.nvim',
+        config = function()
+            require('anhtran.advanced_git_search')
+        end,
+        requires = {
+            'nvim-telescope/telescope.nvim',
+            -- to show diff splits and open commits in browser
+            'tpope/vim-fugitive',
+            -- to open commits in browser with fugitive
+            'tpope/vim-rhubarb',
+            -- optional: to replace the diff from fugitive with diffview.nvim
+            'sindrets/diffview.nvim',
+        },
+    }
+
     use {
         'tanvirtin/vgit.nvim',
         requires = {
@@ -224,7 +215,15 @@ return require('packer').startup(function(use)
         end
     }
 
-    use "sindrets/diffview.nvim"
+    use 'sindrets/diffview.nvim'
+
+    use {
+        'lewis6991/gitsigns.nvim',
+        config = function()
+            require('gitsigns').setup()
+            require('scrollbar.handlers.gitsigns').setup()
+        end
+    }
 
     -- Colorschemes
     use {
