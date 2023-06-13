@@ -38,6 +38,7 @@ legendary.setup({
         { '<space>o', builtin.lsp_document_symbols, description = 'Find all symbols in the current document' },
         { '<space>s', builtin.lsp_dynamic_workspace_symbols, description = 'Find all symbols on the current workspace (Dynamic)' },
         { '<space>e', builtin.diagnostics, description = 'Show all diagnostics' },
+        { '<space>l', ':AerialToggle right<CR>', description = 'Toggle code outline' },
 
         -- Marks
         { 'mo', builtin.marks, description = 'Show all marks (Telescope)' },

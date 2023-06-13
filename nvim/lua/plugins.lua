@@ -59,6 +59,8 @@ return require('packer').startup(function(use)
 
     use "numToStr/FTerm.nvim"
 
+    use 'nvim-tree/nvim-web-devicons'
+
     use {
         'gelguy/wilder.nvim',
         config = function()
@@ -172,6 +174,11 @@ return require('packer').startup(function(use)
         config = function()
             require("tabs-vs-spaces").setup()
         end
+    }
+
+    use {
+        'stevearc/aerial.nvim',
+        config = function() require('aerial').setup() end
     }
 
     -- Code completion
