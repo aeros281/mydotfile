@@ -38,4 +38,13 @@ legendary.setup({
         { '<space>s', builtin.lsp_dynamic_workspace_symbols, description = 'Find all symbols on the current workspace (Dynamic)' },
         { '<space>e', builtin.diagnostics, description = 'Show all diagnostics' },
     },
+    commands = {
+        {
+            ':LedgPackerSync',
+            function()
+                vim.cmd("PackerSync")
+            end,
+            description = "Sync packer",
+        }
+    }
 })
