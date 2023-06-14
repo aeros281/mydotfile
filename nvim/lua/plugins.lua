@@ -163,7 +163,8 @@ return require('packer').startup(function(use)
     }
 
     use {
-        'ms-jpq/coq_nvim'
+        'ms-jpq/coq_nvim',
+        'ms-jpq/coq.artifacts',
     }
 
     use {

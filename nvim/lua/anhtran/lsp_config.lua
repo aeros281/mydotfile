@@ -4,7 +4,6 @@ local coq = require("coq")
 
 lspconfig.pyright.setup(coq.lsp_ensure_capabilities())
 lspconfig.tsserver.setup(coq.lsp_ensure_capabilities())
-lspconfig.lua.setup(coq.lsp_ensure_capabilities())
 lspconfig.rust_analyzer.setup(coq.lsp_ensure_capabilities {
     -- Server-specific settings. See `:help lspconfig-setup`
     settings = {
