@@ -14,12 +14,12 @@ return require('packer').startup(function(use)
     }
 
     -- UI utilities
-    use {'stevearc/dressing.nvim'}
+    use { 'stevearc/dressing.nvim' }
 
     use {
         'nvim-lualine/lualine.nvim',
         requires = { 'nvim-tree/nvim-web-devicons', opt = true },
-        config = function() require'lualine'.setup() end,
+        config = function() require 'lualine'.setup() end,
     }
 
     use({
@@ -56,7 +56,7 @@ return require('packer').startup(function(use)
         'gelguy/wilder.nvim',
         config = function()
             local wilder = require('wilder')
-            wilder.setup({modes = {':', '/', '?'}})
+            wilder.setup({ modes = { ':', '/', '?' } })
             wilder.set_option('renderer', wilder.renderer_mux({
                 [':'] = wilder.popupmenu_renderer(
                     wilder.popupmenu_border_theme({
@@ -79,17 +79,17 @@ return require('packer').startup(function(use)
     use {
         'nvim-telescope/telescope.nvim',
         tag = '0.1.1',
-        requires = { {'nvim-lua/plenary.nvim'} },
+        requires = { { 'nvim-lua/plenary.nvim' } },
         config = function()
             require('anhtran.telescope')
         end,
     }
-    
+
     use {
         'phaazon/hop.nvim',
         branch = 'v2', -- optional but strongly recommended
         config = function()
-            require'hop'.setup { keys = 'etovxqpdygfblzhckisuran' }
+            require 'hop'.setup { keys = 'etovxqpdygfblzhckisuran' }
         end
     }
 
@@ -100,7 +100,7 @@ return require('packer').startup(function(use)
     use {
         'AckslD/nvim-neoclip.lua',
         requires = {
-            {'nvim-telescope/telescope.nvim'},
+            { 'nvim-telescope/telescope.nvim' },
         },
         config = function()
             require('anhtran.neo_clip')
@@ -111,7 +111,7 @@ return require('packer').startup(function(use)
         'mrjones2014/legendary.nvim',
         tag = 'v2.1.0',
         -- sqlite is only needed if you want to use frecency sorting
-        requires = { {'kkharji/sqlite.lua'} },
+        requires = { { 'kkharji/sqlite.lua' } },
         config = function()
             require('anhtran.legendary')
         end
@@ -158,7 +158,7 @@ return require('packer').startup(function(use)
     use {
         'neovim/nvim-lspconfig',
         config = function()
-            require'anhtran.lsp_config'
+            require 'anhtran.lsp_config'
         end
     }
 
@@ -174,7 +174,7 @@ return require('packer').startup(function(use)
         'nvim-treesitter/nvim-treesitter',
         run = ':TSUpdate'
     }
-    
+
     use 'Glench/Vim-Jinja2-Syntax'
 
     use {
