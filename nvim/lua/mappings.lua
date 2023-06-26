@@ -8,7 +8,7 @@ local builtin = require('telescope.builtin')
 map('i', '<c-v>', function() vim.cmd("Telescope neoclip") end)
 
 local hop = require('hop')
-map('n', '<leader><leader>s', function() vim.cmd("HopWord") end)
+map('n', '<leader><leader>s', function() vim.cmd("HopChar1") end)
 
 local ranger = require('ranger-nvim')
 local legendary = require('legendary')
