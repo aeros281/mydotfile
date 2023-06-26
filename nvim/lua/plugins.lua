@@ -40,7 +40,7 @@ return require('packer').startup(function(use)
         requires = 'nvim-tree/nvim-web-devicons',
         config = function()
             vim.opt.termguicolors = true
-            require("bufferline").setup{}
+            require("bufferline").setup {}
         end
     }
     use {
@@ -201,12 +201,17 @@ return require('packer').startup(function(use)
         },
     }
 
-    use('jose-elias-alvarez/null-ls.nvim')
+    use {
+        'jose-elias-alvarez/null-ls.nvim',
+        config = function()
+            require 'anhtran.null-ls'
+        end
+    }
 
     use {
         'MunifTanjim/prettier.nvim',
         config = function()
-            require'anhtran.prettier'
+            require 'anhtran.prettier'
         end
     }
 
