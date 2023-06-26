@@ -35,6 +35,15 @@ return require('packer').startup(function(use)
     })
 
     use {
+        'akinsho/bufferline.nvim',
+        tag = "*",
+        requires = 'nvim-tree/nvim-web-devicons',
+        config = function()
+            vim.opt.termguicolors = true
+            require("bufferline").setup{}
+        end
+    }
+    use {
         'petertriho/nvim-scrollbar',
         config = function()
             require('scrollbar').setup()
@@ -125,6 +134,13 @@ return require('packer').startup(function(use)
         end
     }
 
+    use {
+        'mhartington/formatter.nvim',
+        config = function()
+            require('anhtran.formatter')
+        end
+    }
+
     use({
         'kylechui/nvim-surround',
         tag = '*', -- Use for stability; omit to use `main` branch for the latest features
@@ -176,8 +192,6 @@ return require('packer').startup(function(use)
         run = ':TSUpdate'
     }
 
-    use 'Glench/Vim-Jinja2-Syntax'
-
     use {
         'cuducos/yaml.nvim',
         ft = { 'yaml' }, -- optional
@@ -185,6 +199,15 @@ return require('packer').startup(function(use)
             'nvim-treesitter/nvim-treesitter',
             'nvim-telescope/telescope.nvim' -- optional
         },
+    }
+
+    use('jose-elias-alvarez/null-ls.nvim')
+
+    use {
+        'MunifTanjim/prettier.nvim',
+        config = function()
+            require'anhtran.prettier'
+        end
     }
 
     -- Git
