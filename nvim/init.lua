@@ -22,4 +22,4 @@ require('plugins')
 require('mappings')
 
 vim.opt.termguicolors = true
-vim.opt.signcolumn = "auto:9"
+vim.opt.signcolumn = "auto"

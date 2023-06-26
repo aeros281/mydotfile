@@ -84,6 +84,13 @@ return require('packer').startup(function(use)
         end,
     }
 
+    use {
+        'echasnovski/mini.files',
+        config = function()
+            require('mini.files').setup()
+        end,
+    }
+
     -- Search utilities
     use {
         'nvim-telescope/telescope.nvim',

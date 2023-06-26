@@ -25,6 +25,7 @@ legendary.setup({
         { '<leader>A', builtin.grep_string, description = 'Grep the current string on cursor' },
         { '<leader>ra', function() ranger.open(true) end, description = 'Open ranger (File browser)' },
         { '<F2>', function() require('Fterm').toggle() end, description = 'Open quake terminal' },
+        { '~', function() MiniFiles.open(vim.api.nvim_buf_get_name(0)) end, description = 'Show mini files' },
 
         -- Git
         { '<leader>st', builtin.git_status, description = 'Git status' },
