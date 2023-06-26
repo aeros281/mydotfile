@@ -204,7 +204,7 @@ return require('packer').startup(function(use)
     use {
         'jose-elias-alvarez/null-ls.nvim',
         config = function()
-            require 'anhtran.null-ls'
+            require 'anhtran.null-ls-config'
         end
     }
 
