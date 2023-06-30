@@ -28,6 +28,16 @@ return require('packer').startup(function(use)
         requires = { 'nvim-tree/nvim-web-devicons', opt = true },
         config = function() require 'lualine'.setup() end,
     }
+    use {
+        'folke/noice.nvim',
+        requires = {
+            'MunifTanjim/nui.nvim',
+            'rcarriga/nvim-notify',
+        },
+        config = function()
+            require("noice").setup()
+        end
+    }
 
     use({
         'utilyre/barbecue.nvim',
