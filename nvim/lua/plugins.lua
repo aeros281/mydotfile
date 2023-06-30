@@ -17,6 +17,13 @@ return require('packer').startup(function(use)
     use { 'stevearc/dressing.nvim' }
 
     use {
+        'lukas-reineke/indent-blankline.nvim',
+        config = function()
+            require 'anhtran.blankline'
+        end
+    }
+
+    use {
         'nvim-lualine/lualine.nvim',
         requires = { 'nvim-tree/nvim-web-devicons', opt = true },
         config = function() require 'lualine'.setup() end,
