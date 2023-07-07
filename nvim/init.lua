@@ -1,5 +1,4 @@
 -- vim.opt.clipboard = 'unnamedplus'
-
 vim.opt.tabstop = 4
 vim.opt.softtabstop = 4
 vim.opt.shiftwidth = 4
@@ -23,3 +22,18 @@ require('mappings')
 
 vim.opt.termguicolors = true
 vim.opt.signcolumn = "auto"
+
+vim.g.coq_settings = {
+    auto_start = true,
+    keymap = {
+        pre_select = true,
+    },
+    completion = {
+        skip_after = {"{", "}", "[", "]"}
+    },
+    display = {
+        pum = {
+            fast_close = false
+        },
+    },
+}
