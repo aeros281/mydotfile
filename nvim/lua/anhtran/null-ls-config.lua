@@ -6,5 +6,5 @@ null_ls.setup({
         null_ls.builtins.diagnostics.eslint,
         null_ls.builtins.completion.spell,
         null_ls.builtins.diagnostics.credo,
-    }
+    },
 })

@@ -17,6 +17,13 @@ return require("packer").startup(function(use)
     use({ "stevearc/dressing.nvim" })
 
     use({
+        "folke/trouble.nvim",
+        config = function()
+            require("trouble").setup()
+        end,
+    })
+
+    use({
         "lukas-reineke/indent-blankline.nvim",
         config = function()
             require("anhtran.blankline")
@@ -202,7 +209,12 @@ return require("packer").startup(function(use)
         "ms-jpq/coq.artifacts",
     })
 
-    use { 'lvimuser/lsp-inlayhints.nvim', config = function() require 'lsp-inlayhints'.setup() end }
+    use({
+        "lvimuser/lsp-inlayhints.nvim",
+        config = function()
+            require("lsp-inlayhints").setup()
+        end,
+    })
 
     use({
         "ms-jpq/coq.thirdparty",
