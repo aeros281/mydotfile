@@ -202,6 +202,8 @@ return require("packer").startup(function(use)
         "ms-jpq/coq.artifacts",
     })
 
+    use { 'lvimuser/lsp-inlayhints.nvim', config = function() require 'lsp-inlayhints'.setup() end }
+
     use({
         "ms-jpq/coq.thirdparty",
     })

@@ -26,7 +26,7 @@ vim.opt.signcolumn = "auto"
 vim.g.coq_settings = {
     auto_start = true,
     keymap = {
-        pre_select = true,
+        pre_select = false,
     },
     completion = {
         skip_after = {"{", "}", "[", "]"}

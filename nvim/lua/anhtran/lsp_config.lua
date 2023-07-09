@@ -2,14 +2,17 @@
 local lspconfig = require('lspconfig')
 local coq = require("coq")
 
-lspconfig.bashls.setup{}
+lspconfig.bashls.setup {}
 lspconfig.pyright.setup(coq.lsp_ensure_capabilities())
 lspconfig.tsserver.setup(coq.lsp_ensure_capabilities())
 lspconfig.rust_analyzer.setup(coq.lsp_ensure_capabilities {
-    -- Server-specific settings. See `:help lspconfig-setup`
     settings = {
-        ['rust-analyzer'] = {},
-    },
+        ['rust-analyzer'] = {
+            diagnostics = {
+                enable = true,
+            }
+        }
+    }
 })
 
 lspconfig.elixirls.setup(coq.lsp_ensure_capabilities {
@@ -40,6 +43,20 @@ if vim.fn.executable('lua-language-server') then
         },
     })
 end
+
+vim.api.nvim_create_augroup("LspAttach_inlayhints", {})
+vim.api.nvim_create_autocmd("LspAttach", {
+  group = "LspAttach_inlayhints",
+  callback = function(args)
+    if not (args.data and args.data.client_id) then
+      return
+    end
+
+    local bufnr = args.buf
+    local client = vim.lsp.get_client_by_id(args.data.client_id)
+    require("lsp-inlayhints").on_attach(client, bufnr)
+  end,
+})
 
 -- Global mappings.
 -- See `:help vim.diagnostic.*` for documentation on any of the below functions

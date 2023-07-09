@@ -117,5 +117,19 @@ legendary.setup({
             end,
             description = "Close diff view",
         },
+        {
+            ":LedgGitHub",
+            function()
+                vim.cmd("GitBlameOpenFileURL")
+            end,
+            description = "Github/GitLab open file URL",
+        },
+        {
+            ":LedgGitHubCommitHash",
+            function()
+                vim.cmd("GitBlameOpenCommitURL")
+            end,
+            description = "Github/GitLab open commit URL",
+        },
     },
 })
