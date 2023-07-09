@@ -52,15 +52,15 @@ legendary.setup({
         },
 
         -- Git
-        { "<leader>st", builtin.git_status,       description = "Git status" },
-        { "<leader>gs", ":AdvancedGitSearch<CR>", description = "Advanced git search" },
-        { "<leader>gb", ":GitBlameToggle<CR>",    description = "Toggle git blame" },
+        { "<leader>st", builtin.git_status,           description = "Git status" },
+        { "<leader>gs", ":AdvancedGitSearch<CR>",     description = "Advanced git search" },
+        { "<leader>gb", ":GitBlameToggle<CR>",        description = "Toggle git blame" },
 
         -- LSP keymap
-        { "gr",         builtin.lsp_references,           description = "Find all references" },
-        { "gd",         builtin.lsp_definitions,          description = "Go to definition" },
-        { "gi",         builtin.lsp_implementations,      description = "Find all implementations" },
-        { "<space>o",   builtin.lsp_document_symbols,     description = "Find all symbols in the current document" },
+        { "gr",         builtin.lsp_references,       description = "Find all references" },
+        { "gd",         builtin.lsp_definitions,      description = "Go to definition" },
+        { "gi",         builtin.lsp_implementations,  description = "Find all implementations" },
+        { "<space>o",   builtin.lsp_document_symbols, description = "Find all symbols in the current document" },
         {
             "<space>s",
             builtin.lsp_dynamic_workspace_symbols,
@@ -130,6 +130,13 @@ legendary.setup({
                 vim.cmd("GitBlameOpenCommitURL")
             end,
             description = "Github/GitLab open commit URL",
+        },
+        {
+            ":LedgToggleInlayHints",
+            function()
+                require('lsp-inlayhints').toggle()
+            end,
+            description = "Toggle Rust inlay hints",
         },
     },
 })

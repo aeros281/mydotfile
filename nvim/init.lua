@@ -8,17 +8,16 @@ vim.opt.autoindent = true
 vim.opt.smartindent = true
 
 vim.opt.number = true
-vim.opt.mouse = 'a'
+vim.opt.mouse = "a"
 vim.opt.cursorline = true
 vim.opt.ttimeoutlen = 50
 
 vim.opt.termguicolors = true
-
-vim.g.coq_settings = { auto_start = 'shut-up' }
+vim.g.coq_settings = { auto_start = "shut-up" }
 vim.g.gitblame_enabled = 0
 
-require('plugins')
-require('mappings')
+require("plugins")
+require("mappings")
 
 vim.opt.termguicolors = true
 vim.opt.signcolumn = "auto"
@@ -29,11 +28,31 @@ vim.g.coq_settings = {
         pre_select = false,
     },
     completion = {
-        skip_after = {"{", "}", "[", "]"}
+        skip_after = { "{", "}", "[", "]" },
     },
     display = {
         pum = {
-            fast_close = false
+            fast_close = true,
+        },
+    },
+    clients = {
+        buffers = {
+            enabled = true,
+            weight_adjust = -1.9,
+        },
+        tree_sitter = {
+            enabled = true,
+            weight_adjust = -1.5,
+        },
+        lsp = {
+            enabled = true,
+            weight_adjust = 1.5,
+        },
+        snippets = {
+            enabled = true,
+            weight_adjust = 1.9,
         },
     },
 }
+
+vim.cmd("colorscheme catppuccin")
