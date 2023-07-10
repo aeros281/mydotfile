@@ -55,4 +55,4 @@ vim.g.coq_settings = {
     },
 }
 
-vim.cmd("colorscheme catppuccin")
+vim.cmd("colorscheme tokyonight")

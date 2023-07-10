@@ -278,7 +278,9 @@ return require("packer").startup(function(use)
     })
 
     -- Colorschemes
-    use({ "catppuccin/nvim", as = "catppuccin", })
-
-    use { 'NLKNguyen/papercolor-theme' }
+    use({ "catppuccin/nvim", as = "catppuccin" })
+    use({ "NLKNguyen/papercolor-theme" })
+    use({ "ellisonleao/gruvbox.nvim" })
+    use({ "folke/tokyonight.nvim" })
+    use({ "bignimbus/pop-punk.vim" })
 end)
