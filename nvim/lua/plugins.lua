@@ -151,6 +151,7 @@ return require("packer").startup(function(use)
     })
 
     -- Editing
+    use { 'lambdalisue/suda.vim' }
     use({
         "m4xshen/autoclose.nvim",
         config = function()
