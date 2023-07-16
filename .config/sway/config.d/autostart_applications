@@ -1,0 +1,5 @@
+exec dunst
+exec blueberry-tray
+exec_always nm-applet
+exec env RUST_BACKTRACE=1 RUST_LOG=swayr=debug swayrd > /tmp/swayrd.log 2>&1
+exec --no-startup-id fcitx5 -d
