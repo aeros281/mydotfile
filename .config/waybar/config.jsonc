@@ -14,7 +14,7 @@
     "modules-center": ["cpu", "memory", "disk"],
     "modules-right": ["tray", "backlight", "battery", "network", "pulseaudio", "clock"],
     "clock": {
-        "format": " {:%H:%M}",
+        "format": " {:%d/%m %H:%M}",
         "tooltip": "true",
         "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
         "format-alt": " {:%d/%m}"
@@ -37,7 +37,7 @@
             "7": "7",
             "8": "8",
             "9": "",
-            "0": "",
+            "10": "",
             "urgent": "",
             "active": "",
             "default": "󰧞",
