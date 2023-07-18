@@ -16,7 +16,7 @@ lspconfig.rust_analyzer.setup(coq.lsp_ensure_capabilities {
 })
 
 lspconfig.elixirls.setup(coq.lsp_ensure_capabilities {
-    cmd = { "/Users/anhtran/.elixir-ls/release/language_server.sh" },
+    cmd = { vim.fn.expand("$HOME/.elixir-ls/release/language_server.sh") },
 })
 
 if vim.fn.executable('lua-language-server') then
