@@ -83,11 +83,11 @@ legendary.setup({
     },
     commands = {
         {
-            ":LedgPackerSync",
+            ":LedgLazy",
             function()
-                vim.cmd("PackerSync")
+                vim.cmd("Lazy")
             end,
-            description = "Sync packer",
+            description = "Open Lazy config",
         },
         {
             ":LedgYamlJump",
