@@ -35,4 +35,12 @@ return {
             --Config goes here
         },
     },
+    {
+        "windwp/nvim-autopairs",
+        event = "InsertEnter",
+        opts = {}, -- this is equalent to setup({}) function
+        config = function()
+            require("anhtran.auto_pair")
+        end
+    },
 }
