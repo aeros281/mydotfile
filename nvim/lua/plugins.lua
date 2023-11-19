@@ -26,7 +26,7 @@ return require("packer").startup(function(use)
     use({
         "lukas-reineke/indent-blankline.nvim",
         config = function()
-            require("anhtran.blankline")
+            require("ibl").setup()
         end,
     })
 

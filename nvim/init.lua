@@ -23,37 +23,14 @@ require("mappings")
 vim.opt.termguicolors = true
 vim.opt.signcolumn = "auto"
 
-vim.g.coq_settings = {
-    auto_start = true,
-    keymap = {
-        pre_select = false,
-    },
-    completion = {
-        skip_after = { "{", "}", "[", "]" },
-    },
-    display = {
-        pum = {
-            fast_close = false,
-        },
-    },
-    clients = {
-        buffers = {
-            enabled = true,
-            weight_adjust = -1.9,
-        },
-        tree_sitter = {
-            enabled = true,
-            weight_adjust = -1.5,
-        },
-        lsp = {
-            enabled = true,
-            weight_adjust = 1.5,
-        },
-        snippets = {
-            enabled = true,
-            weight_adjust = 1.9,
-        },
-    },
-}
+local orig_util_open_floating_preview = vim.lsp.util.open_floating_preview
+function vim.lsp.util.open_floating_preview(contents, syntax, opts, ...)
+    opts = opts or {}
+    opts.border = opts.border or 'single'
+    if opts.width == nil then
+        opts.width = 80
+    end
+    return orig_util_open_floating_preview(contents, syntax, opts, ...)
+end
 
 vim.cmd("colorscheme tokyonight")

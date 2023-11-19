@@ -2,6 +2,7 @@
 local lspconfig = require('lspconfig')
 local coq = require("coq")
 
+lspconfig.dartls.setup {}
 lspconfig.bashls.setup {}
 lspconfig.pyright.setup(coq.lsp_ensure_capabilities())
 lspconfig.tsserver.setup(coq.lsp_ensure_capabilities())
@@ -18,6 +19,14 @@ lspconfig.rust_analyzer.setup(coq.lsp_ensure_capabilities {
 lspconfig.elixirls.setup(coq.lsp_ensure_capabilities {
     cmd = { vim.fn.expand("$HOME/.elixir-ls/release/language_server.sh") },
 })
+
+--Enable (broadcasting) snippet capability for completion
+local capabilities = vim.lsp.protocol.make_client_capabilities()
+capabilities.textDocument.completion.completionItem.snippetSupport = true
+
+require 'lspconfig'.cssls.setup {
+    capabilities = capabilities,
+}
 
 if vim.fn.executable('lua-language-server') then
     lspconfig.lua_ls.setup(coq.lsp_ensure_capabilities {
@@ -46,16 +55,16 @@ end
 
 vim.api.nvim_create_augroup("LspAttach_inlayhints", {})
 vim.api.nvim_create_autocmd("LspAttach", {
-  group = "LspAttach_inlayhints",
-  callback = function(args)
-    if not (args.data and args.data.client_id) then
-      return
-    end
+    group = "LspAttach_inlayhints",
+    callback = function(args)
+        if not (args.data and args.data.client_id) then
+            return
+        end
 
-    local bufnr = args.buf
-    local client = vim.lsp.get_client_by_id(args.data.client_id)
-    require("lsp-inlayhints").on_attach(client, bufnr)
-  end,
+        local bufnr = args.buf
+        local client = vim.lsp.get_client_by_id(args.data.client_id)
+        require("lsp-inlayhints").on_attach(client, bufnr)
+    end,
 })
 
 -- Global mappings.
