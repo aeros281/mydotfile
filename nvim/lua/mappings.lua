@@ -136,7 +136,7 @@ legendary.setup({
             function()
                 require('lsp-inlayhints').toggle()
             end,
-            description = "Toggle Rust inlay hints",
+            description = "Toggle inlay hints",
         },
     },
 })
