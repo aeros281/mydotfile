@@ -77,7 +77,13 @@ legendary.setup({
         },
 
         -- Marks
-        { "mo",        builtin.marks,             description = "Show all marks (Telescope)" },
+        {
+            "mo",
+            function()
+                vim.cmd("Telescope bookmarks list")
+            end,
+            description = "Show all marks (Telescope)",
+        },
         { "m;",        "<Plug>(Marks-toggle)",    description = "Toggle mark on the current line" },
         { "dm<space>", "<Plug>(Marks-deletebuf)", description = "Clear all marks on the current buffer" },
     },
@@ -134,7 +140,7 @@ legendary.setup({
         {
             ":LedgToggleInlayHints",
             function()
-                require('lsp-inlayhints').toggle()
+                require("lsp-inlayhints").toggle()
             end,
             description = "Toggle inlay hints",
         },
