@@ -1,0 +1,14 @@
+snippet statelessWidget
+alias swidget
+    class ${1: WidgetName} extends StatelessWidget {
+      const ${1: WidgetName}({Key? key}) : super(key: key);
+
+      @override
+      Widget build(BuildContext context) {
+        return Container();
+      }
+    }
+
+snippet importTranslation
+alias itrans
+    import 'package:flutter_gen/gen_l10n/app_localizations.dart';

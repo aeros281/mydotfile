@@ -2,8 +2,8 @@
 local lspconfig = require('lspconfig')
 local coq = require("coq")
 
-lspconfig.dartls.setup {}
-lspconfig.bashls.setup {}
+lspconfig.dartls.setup {coq.lsp_ensure_capabilities()}
+lspconfig.bashls.setup {coq.lsp_ensure_capabilities()}
 lspconfig.pyright.setup(coq.lsp_ensure_capabilities())
 lspconfig.tsserver.setup(coq.lsp_ensure_capabilities())
 lspconfig.rust_analyzer.setup(coq.lsp_ensure_capabilities {
@@ -43,6 +43,7 @@ if vim.fn.executable('lua-language-server') then
                 workspace = {
                     -- Make the server aware of Neovim runtime files
                     library = vim.api.nvim_get_runtime_file("", true),
+                    checkThirdParty = false, -- THIS IS THE IMPORTANT LINE TO ADD
                 },
                 -- Do not send telemetry data containing a randomized but unique identifier
                 telemetry = {

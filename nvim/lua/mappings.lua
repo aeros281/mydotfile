@@ -77,17 +77,23 @@ legendary.setup({
         },
 
         -- Marks
-        { "mo",        builtin.marks,             description = "Show all marks (Telescope)" },
+        {
+            "mo",
+            function()
+                vim.cmd("Telescope bookmarks list")
+            end,
+            description = "Show all marks (Telescope)",
+        },
         { "m;",        "<Plug>(Marks-toggle)",    description = "Toggle mark on the current line" },
         { "dm<space>", "<Plug>(Marks-deletebuf)", description = "Clear all marks on the current buffer" },
     },
     commands = {
         {
-            ":LedgPackerSync",
+            ":LedgLazy",
             function()
-                vim.cmd("PackerSync")
+                vim.cmd("Lazy")
             end,
-            description = "Sync packer",
+            description = "Open Lazy config",
         },
         {
             ":LedgYamlJump",
@@ -134,9 +140,9 @@ legendary.setup({
         {
             ":LedgToggleInlayHints",
             function()
-                require('lsp-inlayhints').toggle()
+                require("lsp-inlayhints").toggle()
             end,
-            description = "Toggle Rust inlay hints",
+            description = "Toggle inlay hints",
         },
     },
 })
