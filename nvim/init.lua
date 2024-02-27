@@ -11,6 +11,7 @@ vim.opt.title = true
 vim.opt.number = true
 vim.opt.mouse = "a"
 vim.opt.cursorline = true
+vim.opt.cursorcolumn = true
 vim.opt.ttimeoutlen = 50
 
 vim.opt.termguicolors = true

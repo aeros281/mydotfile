@@ -24,7 +24,7 @@ legendary.setup({
         { "<F1>",                ":Legendary<CR>",           description = "Legendary search" },
         { "<A-w>",               ":bd<CR>",                  description = "Close the current buffer" },
         { "<C-p>",               builtin.find_files,         description = "Find files" },
-        { "<A-F>",               builtin.live_grep,          description = "Live grep" },
+        { "<A-F>",               ":Telescope egrepify<CR>",          description = "Live grep" },
         { "<C-v>",               ":Telescope registers<CR>", description = "Open registers (Telescope)" },
         { "<leader><leader>neo", ":Telescope neoclip<CR>",   description = "Open neoclip (Telescope)" },
         { ";",                   builtin.buffers,            description = "Search buffers" },
@@ -143,6 +143,22 @@ legendary.setup({
                 require("lsp-inlayhints").toggle()
             end,
             description = "Toggle inlay hints",
+        },
+        {
+            ":SaveBookmarks",
+            function()
+                local actions = require("bookmarks.actions")
+                actions.saveBookmarks()
+            end,
+            description = "Save current bookmarks",
+        },
+        {
+            ":LoadBookmarks",
+            function()
+                local actions = require("bookmarks.actions")
+                actions.loadBookmarks()
+            end,
+            description = "Refresh bookmarks",
         },
     },
 })
