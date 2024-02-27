@@ -16,9 +16,9 @@ lspconfig.rust_analyzer.setup(coq.lsp_ensure_capabilities {
     }
 })
 
-lspconfig.elixirls.setup(coq.lsp_ensure_capabilities {
-    cmd = { vim.fn.expand("$HOME/.elixir-ls/release/language_server.sh") },
-})
+-- lspconfig.elixirls.setup(coq.lsp_ensure_capabilities {
+--     cmd = { vim.fn.expand("$HOME/.elixir-ls/release/language_server.sh") },
+-- })
 
 --Enable (broadcasting) snippet capability for completion
 local capabilities = vim.lsp.protocol.make_client_capabilities()
