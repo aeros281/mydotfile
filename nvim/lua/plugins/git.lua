@@ -5,6 +5,7 @@ return {
         config = function()
             require("anhtran.advanced_git_search")
         end,
+        enabled = false,
         dependencies = {
             "nvim-telescope/telescope.nvim",
             -- to show diff splits and open commits in browser
