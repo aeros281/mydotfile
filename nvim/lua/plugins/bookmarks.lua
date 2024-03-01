@@ -52,6 +52,14 @@ return {
             vim.keymap.set("n", "<C-M-j>", function()
                 harpoon:list():next()
             end)
+
+            -- Fuck macOS --
+            vim.keymap.set("n", "<C-˚>", function()
+                harpoon:list():prev()
+            end)
+            vim.keymap.set("n", "<C-∆>", function()
+                harpoon:list():next()
+            end)
         end,
     },
 }

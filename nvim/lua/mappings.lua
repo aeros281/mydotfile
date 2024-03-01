@@ -6,6 +6,10 @@ map("n", "<C-T>", function()
 	vim.cmd("CHADopen")
 end)
 
+vim.api.nvim_set_keymap('n', '<M-w>', ':bd<CR>', { noremap = true, silent = true })
+-- Fuck macOS --
+vim.api.nvim_set_keymap('n', '<∑>', ':bd<CR>', { noremap = true, silent = true })
+
 local builtin = require("telescope.builtin")
 map("i", "<c-v>", function()
 	vim.cmd("Telescope neoclip")
