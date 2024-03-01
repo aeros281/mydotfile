@@ -167,5 +167,12 @@ legendary.setup({
 			end,
 			description = "Change current colorscheme",
 		},
+		{
+			":RunLazyGit",
+			function()
+				vim.cmd("LazyGit")
+			end,
+			description = "Open lazy git",
+		},
 	},
 })
