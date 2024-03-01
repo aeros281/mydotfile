@@ -160,5 +160,12 @@ legendary.setup({
 			end,
 			description = "Refresh bookmarks",
 		},
+		{
+			":ChangeColorScheme",
+			function()
+				vim.cmd("Telescope colorscheme")
+			end,
+			description = "Change current colorscheme",
+		},
 	},
 })
