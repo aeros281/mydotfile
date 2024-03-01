@@ -15,8 +15,11 @@ map("i", "<c-v>", function()
 	vim.cmd("Telescope neoclip")
 end)
 
-local hop = require("hop")
 map("n", "<leader><leader>s", function()
+	vim.cmd("HopChar1")
+end)
+
+map("n", "<space><space>s", function()
 	vim.cmd("HopChar1")
 end)
 
