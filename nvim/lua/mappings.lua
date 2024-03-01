@@ -48,6 +48,13 @@ legendary.setup({
 			description = "Open lazy git",
 		},
 		{
+			"<F3>",
+			function()
+				vim.cmd('TermExec cmd="git status"')
+			end,
+			description = "Open git terminal",
+		},
+		{
 			"~",
 			function()
 				MiniFiles.open(vim.api.nvim_buf_get_name(0))
