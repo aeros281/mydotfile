@@ -39,9 +39,9 @@ legendary.setup({
 		{
 			"<F2>",
 			function()
-				require("Fterm").toggle()
+				vim.cmd("LazyGit")
 			end,
-			description = "Open quake terminal",
+			description = "Open lazy git",
 		},
 		{
 			"~",
@@ -166,13 +166,6 @@ legendary.setup({
 				vim.cmd("Telescope colorscheme")
 			end,
 			description = "Change current colorscheme",
-		},
-		{
-			":RunLazyGit",
-			function()
-				vim.cmd("LazyGit")
-			end,
-			description = "Open lazy git",
 		},
 	},
 })
