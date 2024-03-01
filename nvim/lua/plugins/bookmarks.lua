@@ -5,7 +5,7 @@ return {
         event = "VimEnter",
         config = function()
             require("bookmarks").setup({
-                sign_priority = 99,  --set bookmark sign priority to cover other sign
+                sign_priority = 99, --set bookmark sign priority to cover other sign
                 save_file = vim.fn.expand("$HOME/.bookmarks"), -- bookmarks save file path
                 keywords = {
                     ["test:"] = "󰙨", -- mark annotation startswith @t ,signs this icon as `Todo`
@@ -25,6 +25,33 @@ return {
                 end,
             })
             require("telescope").load_extension("bookmarks")
+        end,
+    },
+    {
+        "ThePrimeagen/harpoon",
+        branch = "harpoon2",
+        dependencies = { "nvim-lua/plenary.nvim" },
+        config = function()
+            local harpoon = require("harpoon")
+
+            -- REQUIRED
+            harpoon:setup()
+            -- REQUIRED
+
+            vim.keymap.set("n", "<leader>ha", function()
+                harpoon:list():append()
+            end)
+            vim.keymap.set("n", "<leader>hl", function()
+                harpoon.ui:toggle_quick_menu(harpoon:list())
+            end)
+
+            -- Toggle previous & next buffers stored within Harpoon list
+            vim.keymap.set("n", "<C-M-k>", function()
+                harpoon:list():prev()
+            end)
+            vim.keymap.set("n", "<C-M-j>", function()
+                harpoon:list():next()
+            end)
         end,
     },
 }
