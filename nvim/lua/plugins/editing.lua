@@ -41,6 +41,61 @@ return {
         opts = {}, -- this is equalent to setup({}) function
         config = function()
             require("anhtran.auto_pair")
-        end
+        end,
+    },
+    {
+        "RRethy/vim-illuminate",
+        enabled = false,
+        config = function()
+            -- default configuration
+            require("illuminate").configure({
+                -- providers: provider used to get references in the buffer, ordered by priority
+                providers = {
+                    "lsp",
+                    "treesitter",
+                    "regex",
+                },
+                -- delay: delay in milliseconds
+                delay = 100,
+                -- filetypes_denylist: filetypes to not illuminate, this overrides filetypes_allowlist
+                filetypes_denylist = {
+                    "dirbuf",
+                    "dirvish",
+                    "fugitive",
+                },
+                under_cursor = true,
+                large_file_cutoff = nil,
+                -- large_file_config: config to use for large files (based on large_file_cutoff).
+                -- Supports the same keys passed to .configure
+                -- If nil, vim-illuminate will be disabled for large files.
+                large_file_overrides = nil,
+                -- min_count_to_highlight: minimum number of matches required to perform highlighting
+                min_count_to_highlight = 1,
+                -- should_enable: a callback that overrides all other settings to
+                -- enable/disable illumination. This will be called a lot so don't do
+                -- anything expensive in it.
+                should_enable = function(bufnr)
+                    return true
+                end,
+                case_insensitive_regex = false,
+            })
+        end,
+    },
+    {
+        "yamatsum/nvim-cursorline",
+        config = function()
+            require("nvim-cursorline").setup({
+                cursorline = {
+                    enable = true,
+                    timeout = 1000,
+                    number = false,
+                },
+                cursorword = {
+                    enable = true,
+                    min_length = 3,
+                    hl = { underline = true },
+                },
+            })
+        end,
     },
 }
