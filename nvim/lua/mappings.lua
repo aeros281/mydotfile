@@ -26,9 +26,9 @@ end)
 local ranger = require("ranger-nvim")
 local legendary = require("legendary")
 
+vim.api.nvim_set_keymap("n", "<F1>", ":Legendary<CR>", { noremap = true, silent = true })
 legendary.setup({
 	keymaps = {
-		{ "<F1>", ":Legendary<CR>", description = "Legendary search" },
 		{ "<A-w>", ":bd<CR>", description = "Close the current buffer" },
 		{ "<C-p>", builtin.find_files, description = "Find files" },
 		{ "<A-F>", ":Telescope egrepify<CR>", description = "Live grep" },
