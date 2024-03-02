@@ -45,7 +45,7 @@ return {
     },
     {
         "RRethy/vim-illuminate",
-        enabled = true,
+        enabled = false,
         config = function()
             -- default configuration
             require("illuminate").configure({
@@ -83,7 +83,7 @@ return {
     },
     {
         "yamatsum/nvim-cursorline",
-        enabled = false,
+        enabled = true,
         config = function()
             require("nvim-cursorline").setup({
                 cursorline = {
