@@ -48,7 +48,7 @@ legendary.setup({
 			function()
 				vim.cmd("LazyGit")
 			end,
-			description = "Open lazy git",
+			description = "Git tool",
 		},
 		{
 			"<F3>",
