@@ -12,7 +12,7 @@
         "custom/playerlabel"
     ],
     "modules-center": ["hyprland/window"],
-    "modules-right": ["custom/hyprpicker", "cpu", "memory", "disk", "tray", "backlight", "battery", "network", "wireplumber", "clock"],
+    "modules-right": ["custom/hyprpicker", "tray", "backlight", "battery", "network", "wireplumber", "clock"],
     "clock": {
         "format": " {:%d/%m %H:%M}",
         "tooltip": "true",
