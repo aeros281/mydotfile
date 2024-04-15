@@ -1,12 +1,5 @@
 return {
     {
-        "mhanberg/output-panel.nvim",
-        event = "VeryLazy",
-        config = function()
-            require("output_panel").setup()
-        end,
-    },
-    {
         "elixir-tools/elixir-tools.nvim",
         version = "*",
         event = { "BufReadPre *.ex,*.exs", "BufNewFile *.ex,*.exs" },
