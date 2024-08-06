@@ -23,6 +23,10 @@ map("n", "<space><space>s", function()
 	vim.cmd("HopChar1")
 end)
 
+map("n", "<space>q", function()
+	vim.cmd("copen")
+end)
+
 local ranger = require("ranger-nvim")
 local legendary = require("legendary")
 
