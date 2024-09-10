@@ -5,7 +5,7 @@ local coq = require("coq")
 lspconfig.dartls.setup {coq.lsp_ensure_capabilities()}
 lspconfig.bashls.setup {coq.lsp_ensure_capabilities()}
 lspconfig.pyright.setup(coq.lsp_ensure_capabilities())
-lspconfig.tsserver.setup(coq.lsp_ensure_capabilities())
+lspconfig.ts_ls.setup(coq.lsp_ensure_capabilities())
 lspconfig.rust_analyzer.setup(coq.lsp_ensure_capabilities {
     settings = {
         ['rust-analyzer'] = {
