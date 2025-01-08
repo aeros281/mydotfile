@@ -4,12 +4,9 @@ return {
         version = "*",
         event = { "BufReadPre *.ex,*.exs", "BufNewFile *.ex,*.exs" },
         config = function()
-            require("elixir").setup({
-                nextls = { enable = false },
-                credo = { enable = true },
-                elixirls = { enable = true },
-            })
+            require("elixir").setup({})
         end,
+        enabled = true,
         dependencies = {
             "nvim-lua/plenary.nvim",
         },

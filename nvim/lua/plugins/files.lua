@@ -1,10 +1,5 @@
 return {
     {
-        "ms-jpq/chadtree",
-        branch = "chad",
-        run = "python3 -m chadtree deps",
-    },
-    {
         "folke/trouble.nvim",
         config = function()
             require("trouble").setup()
