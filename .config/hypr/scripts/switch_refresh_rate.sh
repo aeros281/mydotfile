@@ -15,9 +15,9 @@ RATE2="60.00100"
 
 
 if [ "$(echo $CURRENT_RATE)" == "$(echo $RATE1)" ]; then
-  hyprctl keyword monitor $MONITOR,2560x1600@$RATE2,auto,1.33333
+  hyprctl keyword monitor $MONITOR,2560x1600@$RATE2,auto,1.6
   notify-send "Change refresh rate to 60hz"
 else
-  hyprctl keyword monitor $MONITOR,2560x1600@$RATE1,auto,1.33333
+  hyprctl keyword monitor $MONITOR,2560x1600@$RATE1,auto,1.6
   notify-send "Change refresh rate to 120hz"
 fi
