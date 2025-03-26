@@ -29,8 +29,7 @@ return {
             keymap = {
                 preset = "none",
 
-                ["K"] = { "show_documentation", "hide_documentation", "fallback_to_mappings" },
-                ["<C-space>"] = { "show" },
+                ["<C-space>"] = { "show", "show_documentation", "hide_documentation" },
                 ["<C-e>"] = { "hide" },
                 ["<C-y>"] = { "select_and_accept" },
                 ["<cr>"] = { "select_and_accept", "fallback_to_mappings" },
@@ -125,6 +124,7 @@ return {
                 bashls = {},
                 pyright = {},
                 rust_analyzer = {},
+                ElixirLS = {},
             },
         },
         config = function(_, opts)

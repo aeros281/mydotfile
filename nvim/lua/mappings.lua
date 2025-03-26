@@ -2,29 +2,16 @@ local function map(mode, lhs, rhs)
 	vim.keymap.set(mode, lhs, rhs, { silent = true })
 end
 
-map("n", "<C-T>", function()
-	vim.cmd("CHADopen")
-end)
-
 vim.api.nvim_set_keymap("n", "<M-w>", ":bd<CR>", { noremap = true, silent = true })
 -- Fuck macOS --
 vim.api.nvim_set_keymap("n", "<∑>", ":bd<CR>", { noremap = true, silent = true })
 
+local default_opts = {noremap = true, silent = true}
+vim.api.nvim_set_keymap('v', '<C-f>', 'y<ESC>:Telescope live_grep default_text=<c-r>0<CR>', default_opts)
+
 local builtin = require("telescope.builtin")
 map("i", "<c-v>", function()
 	vim.cmd("Telescope neoclip")
-end)
-
-map("n", "<leader><leader>s", function()
-	vim.cmd("HopChar1")
-end)
-
-map("n", "<space><space>s", function()
-	vim.cmd("HopChar1")
-end)
-
-map("n", "<space>q", function()
-	vim.cmd("copen")
 end)
 
 local ranger = require("ranger-nvim")
