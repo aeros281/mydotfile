@@ -124,7 +124,6 @@ return {
                 bashls = {},
                 pyright = {},
                 rust_analyzer = {},
-                ElixirLS = {},
             },
         },
         config = function(_, opts)
