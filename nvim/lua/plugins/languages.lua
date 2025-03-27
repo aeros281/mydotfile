@@ -9,9 +9,8 @@ return {
                 nextls = { enable = true },
                 elixirls = { enable = false }
             })
-            })
         end,
-q        enabled = true,
+        enabled = true,
         dependencies = {
             "nvim-lua/plenary.nvim",
         },
