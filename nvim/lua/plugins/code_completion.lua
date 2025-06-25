@@ -114,8 +114,44 @@ return {
 		opts_extend = { "sources.default" },
 	},
 	{
-		"neovim/nvim-lspconfig",
-		dependencies = { "saghen/blink.cmp" },
+		"lvimuser/lsp-inlayhints.nvim",
+		config = function()
+			require("lsp-inlayhints").setup()
+		end,
+		enabled = false,
+	},
+	{
+		"nvim-treesitter/nvim-treesitter",
+	},
+	{
+		"nvim-treesitter/nvim-treesitter-textobjects",
+		dependencies = "nvim-treesitter/nvim-treesitter",
+	},
+	{
+		"cuducos/yaml.nvim",
+		ft = { "yaml" }, -- optional
+		requires = {
+			"nvim-treesitter/nvim-treesitter",
+			"nvim-telescope/telescope.nvim", -- optional
+		},
+	},
+	{
+		"nvimtools/none-ls.nvim",
+		enabled = true,
+		dependencies = {
+			"nvimtools/none-ls-extras.nvim",
+		},
+		config = function()
+			require("anhtran.null-ls-config")
+		end,
+	},
+	{
+		"mason-org/mason-lspconfig.nvim",
+		dependencies = {
+			{ "mason-org/mason.nvim", opts = {} },
+			"neovim/nvim-lspconfig",
+			"saghen/blink.cmp",
+		},
 		opts = {
 			servers = {
 				lua_ls = {},
@@ -124,15 +160,26 @@ return {
 				bashls = {},
 				pyright = {},
 				rust_analyzer = {},
+				elixirls = {},
 			},
 		},
 		config = function(_, opts)
+			require("mason-lspconfig").setup({
+				ensure_installed = {
+					"lua_ls",
+					"ts_ls",
+					"eslint",
+					"bashls",
+					"pyright",
+					"rust_analyzer",
+					"elixirls",
+				},
+			})
+
 			local lspconfig = require("lspconfig")
 			for server, config in pairs(opts.servers) do
-				-- passing config.capabilities to blink.cmp merges with the capabilities in your
-				-- `opts[server].capabilities, if you've defined it
 				config.capabilities = require("blink.cmp").get_lsp_capabilities(config.capabilities)
-				lspconfig[server].setup(config)
+				-- lspconfig[server].setup(config)
 			end
 
 			-- Global mappings.
@@ -169,7 +216,6 @@ return {
 					"elixir",
 					"heex",
 					"eex",
-					"html",
 					"lua",
 					"sql",
 					"html",
@@ -185,38 +231,6 @@ return {
 					disable = {},
 				},
 			})
-		end,
-	},
-	{
-		"lvimuser/lsp-inlayhints.nvim",
-		config = function()
-			require("lsp-inlayhints").setup()
-		end,
-		enabled = false,
-	},
-	{
-		"nvim-treesitter/nvim-treesitter",
-	},
-	{
-		"nvim-treesitter/nvim-treesitter-textobjects",
-		dependencies = "nvim-treesitter/nvim-treesitter",
-	},
-	{
-		"cuducos/yaml.nvim",
-		ft = { "yaml" }, -- optional
-		requires = {
-			"nvim-treesitter/nvim-treesitter",
-			"nvim-telescope/telescope.nvim", -- optional
-		},
-	},
-	{
-		"nvimtools/none-ls.nvim",
-		enabled = true,
-		dependencies = {
-			"nvimtools/none-ls-extras.nvim",
-		},
-		config = function()
-			require("anhtran.null-ls-config")
 		end,
 	},
 }

@@ -10,7 +10,7 @@ return {
                 elixirls = { enable = true }
             })
         end,
-        enabled = true,
+        enabled = false,
         dependencies = {
             "nvim-lua/plenary.nvim",
         },
