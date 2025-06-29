@@ -160,7 +160,7 @@ return {
 				bashls = {},
 				pyright = {},
 				rust_analyzer = {},
-				elixirls = {},
+                lexical = {},
 			},
 		},
 		config = function(_, opts)
@@ -172,7 +172,7 @@ return {
 					"bashls",
 					"pyright",
 					"rust_analyzer",
-					"elixirls",
+					"lexical",
 				},
 			})
 
@@ -199,14 +199,6 @@ return {
 					-- Buffer local mappings.
 					-- See `:help vim.lsp.*` for documentation on any of the below functions
 					local local_opts = { buffer = ev.buf }
-					vim.keymap.set("n", "gD", vim.lsp.buf.declaration, local_opts)
-					-- vim.keymap.set('n', 'gd', vim.lsp.buf.definition, opts)
-					vim.keymap.set("n", "K", vim.lsp.buf.hover, local_opts)
-					-- vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, opts)
-					vim.keymap.set("n", "<C-k>", vim.lsp.buf.signature_help, local_opts)
-					vim.keymap.set("n", "<space>D", vim.lsp.buf.type_definition, local_opts)
-					vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, local_opts)
-					vim.keymap.set({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, local_opts)
 					-- vim.keymap.set('n', 'gr', vim.lsp.buf.references, opts)
 				end,
 			})
